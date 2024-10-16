@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #2c2c2c; /* 深灰背景 */
+  color: #e0e0e0; /* 浅灰文本 */
+  height: 100vh; /* 让整个视口充满 */
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 250px; /* 左侧历史栏的宽度 */
+  background-color: #1f1f1f; /* 更深的灰色 */
+  border-right: 1px solid #444; /* 边框颜色 */
+  padding: 10px;
+  overflow-y: auto; /* 允许垂直滚动 */
+}
+
+.history {
+  margin-top: 10px;
+}
+
+.history-item {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  background-color: #333; /* 历史消息背景 */
+}
+
+.history-item:hover {
+  background-color: #444; /* 悬停效果 */
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #2c2c2c; /* 聊天区域背景 */
+}
+
+.header {
+  background-color: #3b3b3b; /* Header 背景 */
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+}
+
+.chat-area {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* 允许垂直滚动 */
+  background-color: #1f1f1f; /* 聊天区域背景 */
+  width: 100%; /* 充满宽度 */
+}
+
+.message {
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 70%;
+  width: fit-content; /* 根据内容自适应宽度 */
+}
+
+.assistant {
+  background-color: #444; /* 助手消息背景 */
+  align-self: flex-start; /* 靠左对齐 */
+}
+
+.user {
+  background-color: #3b3b3b; /* 用户消息背景 */
+  align-self: flex-end; /* 靠右对齐 */
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #444; /* 输入区域边框 */
+  background-color: #1f1f1f; /* 输入区域背景 */
+  width: 100%; /* 充满宽度 */
+}
+
+.input-field {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #444; /* 输入框边框 */
+  border-radius: 20px;
+  margin-right: 10px;
+  background-color: #333; /* 输入框背景 */
+  color: #e0e0e0; /* 输入框文本颜色 */
+}
+
+.input-field::placeholder {
+  color: #b0b0b0; /* 占位符颜色 */
+}
+
+.send-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: #4CAF
+}

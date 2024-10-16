@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMbot</title>
+    <link rel="stylesheet" href="interface.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>历史消息</h2>
+            <div class="history" id="history">
+                <!-- 历史消息将动态添加到这里 -->
+            </div>
+        </div>
+        <div class="chat-container">
+            <header class="header">
+                <h1>MMbot</h1>
+            </header>
+            <main class="chat-area" id="chatArea">
+                <div class="message assistant">您好！有什么可以帮助您的吗？</div>
+            </main>
+            <div class="input-area">
+                <input type="text" placeholder="输入您的消息..." class="input-field" id="userInput" onkeydown="handleKeyDown(event)">
+                <button class="send-button" onclick="sendMessage()">发送</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const message = userInput.value.trim();
+
+            if (message) {
+                // 动态添加历史消息
+                const history = document.getElementById('history');
+                const newHistoryItem = document.createElement('div');
+                newHistoryItem.className = 'history-item';
+                newHistoryItem.textContent = message; // 直接使用用户输入的消息
+                history.appendChild(newHistoryItem);
+
+                // 添加到聊天区域
+                const chatArea = document.getElementById('chatArea');
+                const userMessage = document.createElement('div');
+                userMessage.className = 'message user';
+                userMessage.textContent = message;
+                chatArea.appendChild(userMessage);
+                
+                // 清空输入框
+                userInput.value = '';
+                // 滚动到最新消息
+                chatArea.scrollTop = chatArea.scrollHeight;
+                history.scrollTop = history.scrollHeight; // 滚动历史消息
+            }
+        }
+
+        function handleKeyDown(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // 阻止默认的换行行为
+                sendMessage(); // 调用发送消息的函数
+            }
+        }
+    </script>
+</body>
+</html>
